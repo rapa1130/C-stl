@@ -22,6 +22,15 @@ int main(){
     pt.Print();
     pt.PrintInt(5);
 
+
    void (Point::*Fptr)();
-   Fptr=Point::Fptr;
+   void (Point::*Fptr2)(int);
+   Fptr=&Point::Print;
+   (pt.*Fptr)();
+   Fptr2=&Point::PrintInt;
+   (pt.*Fptr2)(8);
+   (ptr->*Fptr)();
+   (ptr->*Fptr2)(1);
+
+   
 }
